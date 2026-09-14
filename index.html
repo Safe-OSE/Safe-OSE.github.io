@@ -129,12 +129,6 @@
     .person p { margin: 0; color: var(--muted); font-size: .9rem; }
     .person .title { color: var(--ink); font-weight: 750; }
     .person .affiliation { margin-top: .45rem; }
-    .pc-block { margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--line); }
-    .pc-head { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 1.25rem; }
-    .pc-head h3 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 500; }
-    .pc-head p { margin: 0; color: var(--muted); }
-    .pc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
-    .pc-placeholder { grid-column: 1 / -1; padding: 1.35rem; border: 1px dashed rgba(19, 42, 44, .35); border-radius: var(--radius); color: var(--muted); background: rgba(255,255,255,.3); text-align: center; }
     footer { padding: 3rem 0; color: rgba(255,255,255,.74); background: var(--ink); }
     .footer-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; }
     footer strong { display: block; margin-bottom: .35rem; color: var(--white); font-size: 1.15rem; }
@@ -152,9 +146,8 @@
     @media (max-width: 560px) {
       .wrap { width: min(100% - 1.5rem, 1120px); }
       h1 { font-size: 3rem; }
-      .cards, .topics, .people, .pc-grid { grid-template-columns: 1fr; }
+      .cards, .topics, .people { grid-template-columns: 1fr; }
       .date-row { grid-template-columns: 1fr; gap: .25rem; }
-      .pc-head { align-items: flex-start; flex-direction: column; gap: .5rem; }
       .footer-row { align-items: flex-start; flex-direction: column; }
     }
   </style>
@@ -264,7 +257,7 @@
     <section class="alt" id="people">
       <div class="wrap">
         <div class="section-head">
-          <div><p class="eyebrow">Community</p><h2>Workshop co-founders</h2></div>
+          <div><p class="eyebrow">Community</p><h2>Steering Committee</h2></div>
           <p class="section-copy">SafeOSE connects expertise across systems security, open-source ecosystems, standards, governance, IoT, software supply chains, and AI security.</p>
         </div>
         <div class="people">
@@ -272,16 +265,6 @@
           <a class="person" href="https://ljcamp.github.io/" target="_blank" rel="noreferrer"><h3>Jean Camp</h3><p class="title">Bank of America Distinguished Professor of Security Analysis</p><p class="affiliation">University of North Carolina at Charlotte</p></a>
           <a class="person" href="https://www.cs.purdue.edu/homes/bertino/" target="_blank" rel="noreferrer"><h3>Elisa Bertino</h3><p class="title">ACM President and Samuel D. Conte Distinguished Professor of Computer Science</p><p class="affiliation">Purdue University</p></a>
           <a class="person" href="https://research.ibm.com/people/dinesh-verma" target="_blank" rel="noreferrer"><h3>Dinesh Verma</h3><p class="title">IBM Fellow</p><p class="affiliation">IBM Research</p></a>
-        </div>
-        <div class="pc-block">
-          <div class="pc-head">
-            <h3>Program committee</h3>
-            <p>Members will be announced soon.</p>
-          </div>
-          <!-- Replace this placeholder with .person cards as PC members are confirmed. -->
-          <div class="pc-grid">
-            <div class="pc-placeholder">Program committee roster forthcoming</div>
-          </div>
         </div>
       </div>
     </section>
