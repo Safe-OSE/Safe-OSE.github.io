@@ -1,1 +1,299 @@
-<h1> creating the Safe OSE website </h1>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SafeOSE '27 — the NDSS Workshop on Security, Privacy, and Trust in Open-Source Ecosystems and Standards.">
+  <title>SafeOSE '27 | NDSS Workshop</title>
+  <style>
+    :root {
+      --ink: #132a2c;
+      --muted: #596a69;
+      --paper: #f6f3eb;
+      --cream: #ece6d9;
+      --green: #0d5a4e;
+      --mint: #a7ddc7;
+      --amber: #efae49;
+      --white: #fffdf7;
+      --line: rgba(19, 42, 44, .16);
+      --radius: 1.2rem;
+      --shadow: 0 18px 55px rgba(26, 47, 45, .11);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 2.5rem)); margin-inline: auto; }
+    .eyebrow {
+      margin: 0 0 .85rem;
+      color: var(--green);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(246, 243, 235, .9);
+      backdrop-filter: blur(14px);
+    }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .brand { text-decoration: none; font-size: 1.2rem; font-weight: 900; letter-spacing: -.03em; }
+    .brand span { color: var(--green); }
+    .nav-links { display: flex; align-items: center; gap: 1.4rem; }
+    .nav-links a { color: var(--muted); font-size: .9rem; font-weight: 700; text-decoration: none; }
+    .nav-links a:hover { color: var(--green); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 4.8rem 0 4.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.35fr .65fr; gap: 5rem; align-items: end; }
+    h1, h2, h3 { margin-top: 0; line-height: 1.08; letter-spacing: -.045em; }
+    h1 { max-width: 900px; margin-bottom: .75rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.4rem, 7vw, 6.4rem); font-weight: 500; }
+    h1 em { color: var(--green); font-style: italic; }
+    .formal-title { max-width: 780px; margin: 0 0 1rem; color: var(--green); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.35rem, 2.5vw, 2rem); font-weight: 700; line-height: 1.25; letter-spacing: -.025em; }
+    .lede { max-width: 760px; margin: 0; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.35rem); }
+    .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.1rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .7rem 1.1rem; border: 1px solid var(--ink); border-radius: 999px; font-weight: 800; text-decoration: none; }
+    .button.primary { border-color: var(--green); color: var(--white); background: var(--green); }
+    .button:hover { transform: translateY(-2px); }
+    .fact-card { padding: 1.6rem; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255, 253, 247, .72); box-shadow: var(--shadow); }
+    .fact-card dl { margin: 0; }
+    .fact-card div + div { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+    .fact-card dt { color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .fact-card dd { margin: .2rem 0 0; font-weight: 800; }
+
+    section { padding: 5.7rem 0; }
+    section.alt { background: var(--cream); }
+    .section-head { display: grid; grid-template-columns: .65fr 1.35fr; gap: 3rem; margin-bottom: 3rem; }
+    h2 { margin-bottom: .8rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.2rem, 4vw, 3.7rem); font-weight: 500; }
+    .section-copy { margin: 0; color: var(--muted); font-size: 1.08rem; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .card { padding: 1.5rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
+    .card .number { display: inline-grid; width: 2.2rem; height: 2.2rem; margin-bottom: 2rem; place-items: center; border-radius: 50%; color: var(--white); background: var(--green); font-size: .8rem; font-weight: 900; }
+    .card h3 { margin-bottom: .6rem; font-size: 1.18rem; letter-spacing: -.025em; }
+    .card p { margin: 0; color: var(--muted); font-size: .93rem; }
+
+    .topics { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; padding: 0; list-style: none; }
+    .topics li { position: relative; padding: 1rem 1rem 1rem 2.7rem; border: 1px solid var(--line); border-radius: .9rem; background: rgba(255,255,255,.42); font-weight: 650; }
+    .topics li::before { position: absolute; left: 1rem; content: "↗"; color: var(--green); font-weight: 900; }
+    .topics-block { margin: 3.5rem 0; padding-top: 3rem; border-top: 1px solid var(--line); }
+    .topics-block h3 { margin-bottom: .65rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; }
+    .topics-block .section-copy { margin-bottom: 1.5rem; }
+
+    .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .feature-card { display: flex; min-height: 310px; padding: 1.8rem; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
+    .feature-card.agent { background: var(--ink); color: var(--white); }
+    .feature-card .tag { align-self: flex-start; margin-bottom: 3.5rem; padding: .25rem .65rem; border-radius: 999px; color: var(--green); background: var(--mint); font-size: .72rem; font-weight: 900; letter-spacing: .1em; }
+    .feature-card h3 { margin-bottom: .75rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 500; }
+    .feature-card p { margin: 0 0 1.5rem; color: var(--muted); }
+    .feature-card.agent p { color: rgba(255,255,255,.72); }
+    .feature-card .button { align-self: flex-start; margin-top: auto; }
+    .feature-card.agent .button { border-color: rgba(255,255,255,.55); }
+
+    .dates { border-top: 1px solid var(--line); }
+    .date-group + .date-group { margin-top: 3rem; }
+    .date-group h3 { margin-bottom: 1rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.55rem, 2.5vw, 2.1rem); font-weight: 500; }
+    .date-row { display: grid; grid-template-columns: 10rem 1fr auto; gap: 2rem; align-items: center; padding: 1.25rem .25rem; border-bottom: 1px solid var(--line); }
+    .date-row time { color: var(--green); font-weight: 900; }
+    .date-row strong { font-size: 1.05rem; }
+    .date-row span { color: var(--muted); font-size: .84rem; }
+
+    .lineage { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 2.4rem; border-radius: calc(var(--radius) + .5rem); color: var(--white); background: var(--green); box-shadow: var(--shadow); }
+    .lineage .eyebrow { color: var(--mint); }
+    .lineage h2 { margin-bottom: 1rem; }
+    .lineage p { margin: 0; color: rgba(255,255,255,.8); }
+    .lineage .button { align-self: end; justify-self: start; border-color: rgba(255,255,255,.55); }
+
+    .people { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .person { min-height: 185px; padding: 1.35rem; border-top: 4px solid var(--amber); background: var(--white); }
+    .person h3 { margin-bottom: .45rem; font-size: 1.1rem; }
+    .person p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .pc-block { margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--line); }
+    .pc-head { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 1.25rem; }
+    .pc-head h3 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 500; }
+    .pc-head p { margin: 0; color: var(--muted); }
+    .pc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
+    .pc-placeholder { grid-column: 1 / -1; padding: 1.35rem; border: 1px dashed rgba(19, 42, 44, .35); border-radius: var(--radius); color: var(--muted); background: rgba(255,255,255,.3); text-align: center; }
+    footer { padding: 3rem 0; color: rgba(255,255,255,.74); background: var(--ink); }
+    .footer-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; }
+    footer strong { display: block; margin-bottom: .35rem; color: var(--white); font-size: 1.15rem; }
+    footer p { margin: 0; }
+    footer a { color: var(--mint); }
+
+    @media (max-width: 820px) {
+      .nav-links a:not(:last-child) { display: none; }
+      .hero { padding-top: 4rem; }
+      .hero-grid, .section-head, .lineage { grid-template-columns: 1fr; gap: 2rem; }
+      .cards, .people { grid-template-columns: repeat(2, 1fr); }
+      .feature-grid { grid-template-columns: 1fr; }
+      .fact-card { max-width: 480px; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 1.5rem, 1120px); }
+      h1 { font-size: 3rem; }
+      .cards, .topics, .people, .pc-grid { grid-template-columns: 1fr; }
+      .date-row { grid-template-columns: 1fr; gap: .25rem; }
+      .pc-head { align-items: flex-start; flex-direction: column; gap: .5rem; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Primary navigation">
+      <a class="brand" href="#top"><span>Safe</span>OSE '27</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#dates">Dates</a>
+        <a href="#people">People</a>
+        <a class="button" href="cfp.html">Call for papers</a>
+        <a class="button" href="hackathons.html">Hackathons</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">A workshop at the Network and Distributed System Security (NDSS) Symposium 2027</p>
+          <h1><em>SafeOSE</em> '27</h1>
+          <p class="formal-title">NDSS Workshop on Security, Privacy, and Trust in Open-Source Ecosystems and Standards</p>
+          <p class="lede">Bringing together researchers, maintainers, standards developers, and practitioners to make the shared technologies we all depend on more resilient.</p>
+          <div class="actions">
+            <a class="button primary" href="cfp.html">Explore the call for papers</a>
+            <a class="button" href="https://www.ndss-symposium.org/" target="_blank" rel="noreferrer">Visit NDSS ↗</a>
+          </div>
+        </div>
+        <aside class="fact-card" aria-label="Workshop details">
+          <dl>
+            <div><dt>When</dt><dd>March 22, 2027 · full day</dd></div>
+            <div><dt>Where</dt><dd>Seoul, Republic of Korea · co-located with NDSS '27</dd></div>
+            <div><dt>Format</dt><dd>Papers · two hackathons · keynotes</dd></div>
+            <div><dt>Participation</dt><dd>Open to registered attendees</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">Why SafeOSE</p><h2>Think beyond the repository.</h2></div>
+          <p class="section-copy">An open-source ecosystem is more than code or a dependency graph. It includes shared standards, protocols, infrastructure, governance, contributor communities, downstream adopters, and the trust relationships connecting them. A weakness in any shared foundation can propagate across products, organizations, applications, and users.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><span class="number">01</span><h3>Shared foundations</h3><p>Study standards, protocols, reference implementations, platforms, and infrastructure whose security properties travel downstream.</p></article>
+          <article class="card"><span class="number">02</span><h3>Human ecosystems</h3><p>Examine maintainers, contributors, users, governance, disclosure, incentives, sustainability, and community processes.</p></article>
+          <article class="card"><span class="number">03</span><h3>Collective resilience</h3><p>Develop interventions that strengthen whole ecosystems—not only isolated components—across software, IoT, cloud, and AI.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="participate">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">Participate</p><h2>Two distinct programs</h2></div>
+          <p class="section-copy">SafeOSE offers a broad peer-reviewed research-paper program and a separate hands-on hackathon program with two focused tracks. Each has its own scope, instructions, and deadline.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="tag">RESEARCH PAPERS</span>
+            <h3>Call for Papers</h3>
+            <p>Submit regular or short papers to the broad SafeOSE research program. Papers receive double-blind peer review and accepted work will appear in official workshop proceedings.</p>
+            <a class="button primary" href="cfp.html">View research CFP →</a>
+          </article>
+          <article class="feature-card agent">
+            <span class="tag">HANDS-ON PROGRAM</span>
+            <h3>Two Hackathon Tracks</h3>
+            <p>Join a focused challenge on trustworthy AI-agent standards and ecosystems or on the security and privacy of standardized IoT.</p>
+            <a class="button" href="hackathons.html">Explore hackathons →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="dates">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">Plan ahead</p><h2>Important dates</h2></div>
+          <p class="section-copy">The research-paper and hackathon programs have separate deadlines and submission processes. All submission deadlines are Anywhere on Earth.</p>
+        </div>
+        <div class="date-group">
+          <h3>Hackathon tracks</h3>
+          <div class="dates">
+            <div class="date-row"><time datetime="2026-11-30">November 30, 2026</time><strong>Hackathon deadline</strong><span>Both hackathon tracks · AoE</span></div>
+          </div>
+        </div>
+        <div class="date-group">
+          <h3>Research papers</h3>
+          <div class="dates">
+            <div class="date-row"><time datetime="2026-12-10">December 10, 2026</time><strong>Paper submission deadline</strong><span>AoE</span></div>
+          </div>
+        </div>
+        <div class="date-group">
+          <h3>Workshop</h3>
+          <div class="dates">
+            <div class="date-row"><time datetime="2027-03-22">March 22, 2027</time><strong>SafeOSE '27</strong><span>Seoul, Republic of Korea · Co-located with NDSS '27</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap lineage">
+        <div><p class="eyebrow">Our lineage</p><h2>SafeOSE grows from SDIoTSec.</h2><p>SafeOSE is the natural evolution of the NDSS Workshop on Security and Privacy in Standardized IoT, held annually since 2024. It preserves that community and ecosystem-level perspective while expanding beyond IoT to open-source infrastructure, software platforms, AI systems, and agent ecosystems.</p></div>
+        <a class="button" href="https://sdiotsec.github.io/" target="_blank" rel="noreferrer">Visit the prior SDIoTSec workshop ↗</a>
+      </div>
+    </section>
+
+    <section class="alt" id="people">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">Community</p><h2>Workshop co-chairs</h2></div>
+          <p class="section-copy">SafeOSE connects expertise across systems security, open-source ecosystems, standards, governance, IoT, software supply chains, and AI security.</p>
+        </div>
+        <div class="people">
+          <article class="person"><h3>Luyi Xing</h3><p>University of Illinois Urbana-Champaign</p></article>
+          <article class="person"><h3>L. Jean Camp</h3><p>University of North Carolina at Charlotte</p></article>
+          <article class="person"><h3>Elisa Bertino</h3><p>Purdue University</p></article>
+          <article class="person"><h3>Dinesh C. Verma</h3><p>IBM Research</p></article>
+        </div>
+        <div class="pc-block">
+          <div class="pc-head">
+            <h3>Program committee</h3>
+            <p>Members will be announced soon.</p>
+          </div>
+          <!-- Replace this placeholder with .person cards as PC members are confirmed. -->
+          <div class="pc-grid">
+            <div class="pc-placeholder">Program committee roster forthcoming</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div><strong>SafeOSE '27</strong><p>Security, Privacy, and Trust in Open-Source Ecosystems and Standards</p></div>
+      <p><a href="cfp.html">Call for papers</a> · <a href="hackathons.html">Hackathons</a> · <a href="https://sdiotsec.github.io/">SDIoTSec archive</a></p>
+    </div>
+  </footer>
+</body>
+</html>
