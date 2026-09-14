@@ -5,19 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="SafeOSE '27 — the NDSS Workshop on Security, Privacy, and Trust in Open-Source Ecosystems and Standards.">
   <title>SafeOSE '27 | NDSS Workshop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #132a2c;
-      --muted: #596a69;
-      --paper: #f6f3eb;
-      --cream: #ece6d9;
-      --green: #0d5a4e;
-      --mint: #a7ddc7;
-      --amber: #efae49;
-      --white: #fffdf7;
-      --line: rgba(19, 42, 44, .16);
+      --ink: #13294b;
+      --charcoal: #252525;
+      --muted: #4a4c4b;
+      --paper: #f7f8fb;
+      --cream: #e8edf5;
+      --green: #1d58a7;
+      --orange-deep: #c84113;
+      --mint: #dbe7f5;
+      --amber: #ff5f05;
+      --white: #ffffff;
+      --line: rgba(19, 41, 75, .18);
       --radius: 1.2rem;
-      --shadow: 0 18px 55px rgba(26, 47, 45, .11);
+      --shadow: 0 18px 55px rgba(19, 41, 75, .14);
     }
 
     * { box-sizing: border-box; }
@@ -26,7 +31,7 @@
       margin: 0;
       color: var(--ink);
       background: var(--paper);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Hind, ui-sans-serif, system-ui, sans-serif;
       line-height: 1.65;
     }
 
@@ -46,15 +51,15 @@
       top: 0;
       z-index: 10;
       border-bottom: 1px solid var(--line);
-      background: rgba(246, 243, 235, .9);
+      background: rgba(247, 248, 251, .92);
       backdrop-filter: blur(14px);
     }
     nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
     .brand { text-decoration: none; font-size: 1.2rem; font-weight: 900; letter-spacing: -.03em; }
-    .brand span { color: var(--green); }
+    .brand span { color: var(--orange-deep); }
     .nav-links { display: flex; align-items: center; gap: 1.4rem; }
     .nav-links a { color: var(--muted); font-size: .9rem; font-weight: 700; text-decoration: none; }
-    .nav-links a:hover { color: var(--green); }
+    .nav-links a:hover { color: var(--orange-deep); }
 
     .hero {
       position: relative;
@@ -64,24 +69,23 @@
     }
     .hero-grid { position: relative; display: grid; grid-template-columns: 1.35fr .65fr; gap: 5rem; align-items: end; }
     h1, h2, h3 { margin-top: 0; line-height: 1.08; letter-spacing: -.045em; }
-    h1 { max-width: 900px; margin-bottom: .75rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.4rem, 7vw, 6.4rem); font-weight: 500; }
-    h1 em { color: var(--green); font-style: italic; }
-    .formal-title { max-width: 780px; margin: 0 0 1rem; color: var(--green); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.35rem, 2.5vw, 2rem); font-weight: 700; line-height: 1.25; letter-spacing: -.025em; }
+    h1 { max-width: 900px; margin-bottom: .75rem; color: #000; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(3.4rem, 7vw, 6.4rem); font-weight: 500; }
+    .formal-title { max-width: 780px; margin: 0 0 1rem; color: #000; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(1.35rem, 2.5vw, 2rem); font-weight: 700; line-height: 1.25; letter-spacing: -.025em; }
     .lede { max-width: 760px; margin: 0; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.35rem); }
     .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.1rem; }
     .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .7rem 1.1rem; border: 1px solid var(--ink); border-radius: 999px; font-weight: 800; text-decoration: none; }
     .button.primary { border-color: var(--green); color: var(--white); background: var(--green); }
     .button:hover { transform: translateY(-2px); }
-    .fact-card { padding: 1.6rem; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255, 253, 247, .72); box-shadow: var(--shadow); }
+    .fact-card { padding: 1.6rem; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255, 255, 255, .84); box-shadow: var(--shadow); }
     .fact-card dl { margin: 0; }
     .fact-card div + div { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
-    .fact-card dt { color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-    .fact-card dd { margin: .2rem 0 0; font-weight: 800; }
+    .fact-card dt { color: var(--orange-deep); font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .fact-card dd { margin: .2rem 0 0; color: var(--charcoal); font-weight: 800; }
 
     section { padding: 5.7rem 0; }
     section.alt { background: var(--cream); }
     .section-head { display: grid; grid-template-columns: .65fr 1.35fr; gap: 3rem; margin-bottom: 3rem; }
-    h2 { margin-bottom: .8rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.2rem, 4vw, 3.7rem); font-weight: 500; }
+    h2 { margin-bottom: .8rem; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(2.2rem, 4vw, 3.7rem); font-weight: 500; }
     .section-copy { margin: 0; color: var(--muted); font-size: 1.08rem; }
     .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
     .card { padding: 1.5rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
@@ -93,14 +97,14 @@
     .topics li { position: relative; padding: 1rem 1rem 1rem 2.7rem; border: 1px solid var(--line); border-radius: .9rem; background: rgba(255,255,255,.42); font-weight: 650; }
     .topics li::before { position: absolute; left: 1rem; content: "↗"; color: var(--green); font-weight: 900; }
     .topics-block { margin: 3.5rem 0; padding-top: 3rem; border-top: 1px solid var(--line); }
-    .topics-block h3 { margin-bottom: .65rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; }
+    .topics-block h3 { margin-bottom: .65rem; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; }
     .topics-block .section-copy { margin-bottom: 1.5rem; }
 
     .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .feature-card { display: flex; min-height: 310px; padding: 1.8rem; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
     .feature-card.agent { background: var(--ink); color: var(--white); }
     .feature-card .tag { align-self: flex-start; margin-bottom: 3.5rem; padding: .25rem .65rem; border-radius: 999px; color: var(--green); background: var(--mint); font-size: .72rem; font-weight: 900; letter-spacing: .1em; }
-    .feature-card h3 { margin-bottom: .75rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 500; }
+    .feature-card h3 { margin-bottom: .75rem; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 500; }
     .feature-card p { margin: 0 0 1.5rem; color: var(--muted); }
     .feature-card.agent p { color: rgba(255,255,255,.72); }
     .feature-card .button { align-self: flex-start; margin-top: auto; }
@@ -108,13 +112,13 @@
 
     .dates { border-top: 1px solid var(--line); }
     .date-group + .date-group { margin-top: 3rem; }
-    .date-group h3 { margin-bottom: 1rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.55rem, 2.5vw, 2.1rem); font-weight: 500; }
+    .date-group h3 { margin-bottom: 1rem; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(1.55rem, 2.5vw, 2.1rem); font-weight: 500; }
     .date-row { display: grid; grid-template-columns: 10rem 1fr auto; gap: 2rem; align-items: center; padding: 1.25rem .25rem; border-bottom: 1px solid var(--line); }
     .date-row time { color: var(--green); font-weight: 900; }
     .date-row strong { font-size: 1.05rem; }
     .date-row span { color: var(--muted); font-size: .84rem; }
 
-    .lineage { display: grid; grid-template-columns: 1.55fr .45fr; gap: 3rem; padding: 2.4rem; border-radius: calc(var(--radius) + .5rem); color: var(--white); background: var(--green); box-shadow: var(--shadow); }
+    .lineage { display: grid; grid-template-columns: 1.55fr .45fr; gap: 3rem; padding: 2.4rem; border-radius: calc(var(--radius) + .5rem); color: var(--white); background: var(--ink); box-shadow: var(--shadow); }
     .lineage .eyebrow { color: var(--mint); }
     .lineage h2 { margin-bottom: 1rem; }
     .lineage p { margin: 0; color: rgba(255,255,255,.8); }
@@ -171,7 +175,7 @@
       <div class="wrap hero-grid">
         <div>
           <p class="eyebrow">A workshop at the Network and Distributed System Security (NDSS) Symposium 2027</p>
-          <h1><em>SafeOSE</em> '27</h1>
+          <h1>SafeOSE '27</h1>
           <p class="formal-title">NDSS Workshop on Security, Privacy, and Trust in Open-Source Ecosystems and Standards</p>
           <p class="lede">Bringing together researchers, maintainers, standards developers, and practitioners to make the shared technologies we all depend on more resilient.</p>
           <div class="actions">
@@ -194,7 +198,7 @@
       <div class="wrap">
         <div class="section-head">
           <div><p class="eyebrow">Why SafeOSE</p><h2>Think beyond the repository.</h2></div>
-          <p class="section-copy">An open-source ecosystem is more than code or a dependency graph. It includes shared standards, protocols, infrastructure, governance, contributor communities, downstream adopters, and the trust relationships connecting them. A weakness in any shared foundation can propagate across products, organizations, applications, and users.</p>
+          <p class="section-copy">An open-source ecosystem (OSE) is more than code or a dependency graph. It includes shared standards, protocols, infrastructure, governance, contributor communities, downstream adopters, and the trust relationships connecting them. A weakness in any shared foundation can propagate across products, organizations, applications, and users.</p>
         </div>
         <div class="cards">
           <article class="card"><span class="number">01</span><h3>Shared foundations</h3><p>Study standards, protocols, reference implementations, platforms, and infrastructure whose security properties travel downstream.</p></article>
