@@ -87,6 +87,8 @@
     .section-head { display: grid; grid-template-columns: .65fr 1.35fr; gap: 3rem; margin-bottom: 3rem; }
     h2 { margin-bottom: .8rem; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(2.2rem, 4vw, 3.7rem); font-weight: 500; }
     .section-copy { margin: 0; color: var(--muted); font-size: 1.08rem; }
+    .section-copy p { margin: 0; }
+    .section-copy p + p { margin-top: 1rem; }
     .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
     .card { padding: 1.5rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
     .card .number { display: inline-grid; width: 2.2rem; height: 2.2rem; margin-bottom: 2rem; place-items: center; border-radius: 50%; color: var(--white); background: var(--green); font-size: .8rem; font-weight: 900; }
@@ -198,7 +200,11 @@
       <div class="wrap">
         <div class="section-head">
           <div><p class="eyebrow">Why SafeOSE</p><h2>Think beyond the repository.</h2></div>
-          <p class="section-copy">An open-source ecosystem (OSE) is more than code or a dependency graph. It includes shared standards, protocols, infrastructure, governance, contributor communities, downstream adopters, and the trust relationships connecting them. A weakness in any shared foundation can propagate across products, organizations, applications, and users.</p>
+          <div class="section-copy">
+            <p>An open-source ecosystem (OSE) is not a single open-source project, repository, or software dependency. It is the broader socio-technical system organized around one or more shared open-source products, standards, protocols, platforms, or connected technical artifacts. An OSE includes those artifacts together with the organizations and governance structures that guide them; the contributors, maintainers, and developers who create them; the users and downstream adopters who depend on them; the development, maintenance, integration, and deployment infrastructure that supports them; and the applications through which they are used.</p>
+            <p>SafeOSE therefore studies security at the ecosystem level. Software supply-chain risks are an important part of this problem, but the scope is broader: it also encompasses shared standards and protocols, reference implementations, governance and maintenance processes, contributor and user interactions, ecosystem-wide trust relationships, and real-world deployment. Weaknesses in these common foundations can propagate across organizations, products, applications, and users.</p>
+            <p>This challenge is visible in standardized IoT and increasingly urgent in open-source AI-agent ecosystems, where independently developed agents communicate, delegate tasks, and access tools through shared protocols and frameworks. These are two prominent examples, not boundaries on the workshop's scope. SafeOSE encompasses open-source and standards-driven ecosystems across software platforms, cloud and distributed infrastructure, programming languages, data and AI systems, hardware and system designs, scientific and engineering processes, and emerging technologies. SafeOSE aims to build a sustained community around their security, privacy, safety, and trustworthiness, bringing together security, systems, and AI researchers; standards developers; open-source maintainers; industry practitioners; and downstream adopters.</p>
+          </div>
         </div>
         <div class="cards">
           <article class="card"><span class="number">01</span><h3>Shared foundations</h3><p>Study standards, protocols, reference implementations, platforms, and infrastructure whose security properties travel downstream.</p></article>
