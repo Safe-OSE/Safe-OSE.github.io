@@ -114,16 +114,21 @@
     .date-row strong { font-size: 1.05rem; }
     .date-row span { color: var(--muted); font-size: .84rem; }
 
-    .lineage { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 2.4rem; border-radius: calc(var(--radius) + .5rem); color: var(--white); background: var(--green); box-shadow: var(--shadow); }
+    .lineage { display: grid; grid-template-columns: 1.55fr .45fr; gap: 3rem; padding: 2.4rem; border-radius: calc(var(--radius) + .5rem); color: var(--white); background: var(--green); box-shadow: var(--shadow); }
     .lineage .eyebrow { color: var(--mint); }
     .lineage h2 { margin-bottom: 1rem; }
     .lineage p { margin: 0; color: rgba(255,255,255,.8); }
+    .lineage p + p { margin-top: 1rem; }
     .lineage .button { align-self: end; justify-self: start; border-color: rgba(255,255,255,.55); }
 
     .people { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-    .person { min-height: 185px; padding: 1.35rem; border-top: 4px solid var(--amber); background: var(--white); }
+    .person { min-height: 185px; padding: 1.35rem; border-top: 4px solid var(--amber); background: var(--white); text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
+    .person:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
     .person h3 { margin-bottom: .45rem; font-size: 1.1rem; }
+    .person h3::after { content: " ↗"; color: var(--green); }
     .person p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .person .title { color: var(--ink); font-weight: 750; }
+    .person .affiliation { margin-top: .45rem; }
     .pc-block { margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--line); }
     .pc-head { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 1.25rem; }
     .pc-head h3 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 500; }
@@ -210,7 +215,7 @@
       <div class="wrap">
         <div class="section-head">
           <div><p class="eyebrow">Participate</p><h2>Two distinct programs</h2></div>
-          <p class="section-copy">SafeOSE offers a broad peer-reviewed research-paper program and a separate hands-on hackathon program with two focused tracks. Each has its own scope, instructions, and deadline.</p>
+          <p class="section-copy">SafeOSE offers a broad peer-reviewed research-paper program and two separate, hands-on hackathons. Each program has its own scope, instructions, and deadline.</p>
         </div>
         <div class="feature-grid">
           <article class="feature-card">
@@ -221,7 +226,7 @@
           </article>
           <article class="feature-card agent">
             <span class="tag">HANDS-ON PROGRAM</span>
-            <h3>Two Hackathon Tracks</h3>
+            <h3>Two Hackathons</h3>
             <p>Join a focused challenge on trustworthy AI-agent standards and ecosystems or on the security and privacy of standardized IoT.</p>
             <a class="button" href="hackathons.html">Explore hackathons →</a>
           </article>
@@ -236,9 +241,9 @@
           <p class="section-copy">The research-paper and hackathon programs have separate deadlines and submission processes. All submission deadlines are Anywhere on Earth.</p>
         </div>
         <div class="date-group">
-          <h3>Hackathon tracks</h3>
+          <h3>Hackathons</h3>
           <div class="dates">
-            <div class="date-row"><time datetime="2026-11-30">November 30, 2026</time><strong>Hackathon deadline</strong><span>Both hackathon tracks · AoE</span></div>
+            <div class="date-row"><time datetime="2026-11-30">November 30, 2026</time><strong>Hackathon deadline</strong><span>Both hackathons · AoE</span></div>
           </div>
         </div>
         <div class="date-group">
@@ -256,24 +261,17 @@
       </div>
     </section>
 
-    <section>
-      <div class="wrap lineage">
-        <div><p class="eyebrow">Our lineage</p><h2>SafeOSE grows from SDIoTSec.</h2><p>SafeOSE is the natural evolution of the NDSS Workshop on Security and Privacy in Standardized IoT, held annually since 2024. It preserves that community and ecosystem-level perspective while expanding beyond IoT to open-source infrastructure, software platforms, AI systems, and agent ecosystems.</p></div>
-        <a class="button" href="https://sdiotsec.github.io/" target="_blank" rel="noreferrer">Visit the prior SDIoTSec workshop ↗</a>
-      </div>
-    </section>
-
     <section class="alt" id="people">
       <div class="wrap">
         <div class="section-head">
-          <div><p class="eyebrow">Community</p><h2>Workshop co-chairs</h2></div>
+          <div><p class="eyebrow">Community</p><h2>Workshop co-founders</h2></div>
           <p class="section-copy">SafeOSE connects expertise across systems security, open-source ecosystems, standards, governance, IoT, software supply chains, and AI security.</p>
         </div>
         <div class="people">
-          <article class="person"><h3>Luyi Xing</h3><p>University of Illinois Urbana-Champaign</p></article>
-          <article class="person"><h3>L. Jean Camp</h3><p>University of North Carolina at Charlotte</p></article>
-          <article class="person"><h3>Elisa Bertino</h3><p>Purdue University</p></article>
-          <article class="person"><h3>Dinesh C. Verma</h3><p>IBM Research</p></article>
+          <a class="person" href="https://www.xing-luyi.com/" target="_blank" rel="noreferrer"><h3>Luyi Xing</h3><p class="title">Associate Professor of Computer Science</p><p class="affiliation">University of Illinois Urbana-Champaign</p></a>
+          <a class="person" href="https://ljcamp.github.io/" target="_blank" rel="noreferrer"><h3>Jean Camp</h3><p class="title">Bank of America Distinguished Professor of Security Analysis</p><p class="affiliation">University of North Carolina at Charlotte</p></a>
+          <a class="person" href="https://www.cs.purdue.edu/homes/bertino/" target="_blank" rel="noreferrer"><h3>Elisa Bertino</h3><p class="title">ACM President and Samuel D. Conte Distinguished Professor of Computer Science</p><p class="affiliation">Purdue University</p></a>
+          <a class="person" href="https://research.ibm.com/people/dinesh-verma" target="_blank" rel="noreferrer"><h3>Dinesh Verma</h3><p class="title">IBM Fellow</p><p class="affiliation">IBM Research</p></a>
         </div>
         <div class="pc-block">
           <div class="pc-head">
@@ -285,6 +283,18 @@
             <div class="pc-placeholder">Program committee roster forthcoming</div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap lineage">
+        <div>
+          <p class="eyebrow">Our lineage</p>
+          <h2>From SDIoTSec to SafeOSE.</h2>
+          <p>SafeOSE grows directly from SDIoTSec, the NDSS Workshop on Security and Privacy in Standardized IoT, held annually since 2024. SDIoTSec was founded on the insight that vulnerabilities in shared standards and implementations can propagate across entire ecosystems. Its programs already examined Matter, communication standards, bills of materials, open-source implementations, governance, and real-world adoption—not only individual IoT devices.</p>
+          <p>SafeOSE extends this established ecosystem-security perspective beyond standardized IoT. The transition began within SDIoTSec itself: its 2026 program connected standardized IoT with emerging AI-agent technologies including NLIP, A2A, and MCP. SafeOSE preserves the SDIoTSec community and keeps standardized IoT as a core area while expanding to open-source infrastructure, software platforms, AI systems, and agent ecosystems.</p>
+        </div>
+        <a class="button" href="https://sdiotsec.github.io/" target="_blank" rel="noreferrer">Visit the prior SDIoTSec workshop ↗</a>
       </div>
     </section>
   </main>
