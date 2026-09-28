@@ -25,11 +25,11 @@
   </header>
 
   <main>
-    <div class="page-hero">
+    <div class="page-hero compact">
       <div class="wrap">
         <p class="eyebrow">SafeOSE Hackathon · AI Agent Track</p>
         <h1>Building Effective and Trustworthy Open-Source AI Agent Ecosystems</h1>
-        <p class="lede">Help strengthen the open standards, protocols, infrastructure, and communities that enable AI agents to communicate, delegate work, use tools, and cooperate safely across organizational boundaries.</p>
+        <p class="lede">Help strengthen the open standards, protocols, infrastructure, and communities that enable AI agents to securely communicate, delegate work, use tools, interact with AI models, and cooperate across technical and organizational boundaries—regardless of the AI models, development frameworks, or underlying harnesses they use.</p>
         <div class="deadline-banner">
           <div><span>AI Agent Track deadline · Anywhere on Earth</span><br><strong>November 30, 2026</strong></div>
           <a class="button" href="#focus-areas">Explore focus areas ↓</a>
@@ -40,9 +40,9 @@
     <section id="about-track">
       <div class="wrap">
         <div class="section-head">
-          <div><p class="eyebrow">About the track</p><h2>Build trust into an emerging ecosystem.</h2></div>
+          <div><p class="eyebrow">About the track</p><h2>Build trust into open-source AI ecosystems.</h2></div>
           <div>
-            <p class="section-copy">AI agents increasingly operate through shared protocols, tool interfaces, identity systems, and open-source frameworks. This track invites practical contributions that make those shared foundations more secure, private, interoperable, accountable, and resilient.</p>
+            <p class="section-copy">AI agents increasingly operate through shared protocols, tool interfaces, identity systems, and open-source frameworks. This track invites practical contributions that make those shared foundations more secure, private, interoperable, accountable, and resilient. Designs or implementations from excellent submissions will be incorporated into open standards and open-source repositories such as the <a href="https://nlip-project.org/#/" target="_blank" rel="noreferrer">Natural Language Interaction Protocol (NLIP)</a>, established as <a href="https://ecma-international.org/publications-and-standards/standards/ecma-430/" target="_blank" rel="noreferrer">ECMA-430</a> and <a href="https://www.iso.org/standard/94131.html" target="_blank" rel="noreferrer">soon to be an ISO standard</a>.</p>
             <p class="section-copy" style="margin-top:1rem">Projects may study, test, extend, or build on open AI-agent standards and ecosystems, including <a href="https://nlip-project.org/#/" target="_blank" rel="noreferrer">NLIP</a> and other open protocols. Contributions can address individual components or risks that emerge when independently developed agents, tools, services, and users interact.</p>
           </div>
         </div>
@@ -52,37 +52,187 @@
     <section class="alt" id="focus-areas">
       <div class="wrap">
         <div class="section-head">
-          <div><p class="eyebrow">Project directions</p><h2>Focus areas</h2></div>
-          <p class="section-copy">The examples below describe the track's scope. Participants may propose other hands-on projects that advance effective and trustworthy open-source AI agent ecosystems.</p>
+          <div><p class="eyebrow">Hackathon focus areas</p><h2>Design and implementation</h2></div>
+          <p class="section-copy">Choose one of six focus areas. Every area follows the same submission requirements and judging criteria.</p>
         </div>
-        <ul class="topics">
-          <li>Secure, reliable interoperability among agents, tools, and services</li>
-          <li>Agent identity, authentication, authorization, and access control</li>
-          <li>Safe delegation, capability boundaries, and least-privilege design</li>
-          <li>Privacy, consent, provenance, and information-flow controls</li>
-          <li>Security of tool use, discovery, composition, and dependencies</li>
-          <li>Threat modeling, adversarial testing, fuzzing, and verification</li>
-          <li>Accountability, auditability, transparency, and governance</li>
-          <li>Reference implementations, benchmarks, datasets, and developer tools</li>
-        </ul>
+        <div class="focus-grid">
+          <a class="focus-card" href="#focus-detail-1" aria-controls="focus-detail-1">
+            <span class="focus-number">01</span>
+            <h3>Universal agent client</h3>
+            <p>Build one client that can communicate with any NLIP-compliant agent, much as a web browser communicates with any HTTP/HTTPS server. Provide an effective user interface and demonstrate realistic use cases or innovative interactions.</p>
+            <span class="detail-link">View detailed brief ↓</span>
+          </a>
+          <a class="focus-card" href="#focus-detail-2" aria-controls="focus-detail-2">
+            <span class="focus-number">02</span>
+            <h3>Agent identity and authentication</h3>
+            <p>Design interoperable mechanisms for establishing and verifying agent or user identity, credentials, and trust across technical and organizational boundaries.</p>
+            <span class="detail-link">View detailed brief ↓</span>
+          </a>
+          <a class="focus-card" href="#focus-detail-3" aria-controls="focus-detail-3">
+            <span class="focus-number">03</span>
+            <h3>Security functions at unified control points</h3>
+            <p>Build a pluggable, framework-agnostic security function at an NLIP ingress, egress, or tool/model boundary. Demonstrate prevention, detection, or recovery against realistic attacks using data visible at the standardized communication layer.</p>
+            <span class="detail-link">View architecture and brief ↓</span>
+          </a>
+          <a class="focus-card" href="#focus-detail-4" aria-controls="focus-detail-4">
+            <span class="focus-number">04</span>
+            <h3>Schemas and structured NLIP messages</h3>
+            <p>Design schemas for structured content carried by NLIP messages, conceptually like XML or HTML documents carried over HTTP/HTTPS, with an emphasis on validation and interoperability.</p>
+            <div class="focus-subareas"><span>4.1 Generic schemas</span><span>4.2 Domain-specific schemas</span></div>
+            <span class="detail-link">View detailed brief ↓</span>
+          </a>
+          <a class="focus-card" href="#focus-detail-5" aria-controls="focus-detail-5">
+            <span class="focus-number">05</span>
+            <h3>Representative multi-agent use cases</h3>
+            <p>Build realistic multi-agent systems on the NLIP communication standard and show how independently developed agents cooperate across models, frameworks, and organizational boundaries.</p>
+            <span class="detail-link">View detailed brief ↓</span>
+          </a>
+          <a class="focus-card" href="#focus-detail-6" aria-controls="focus-detail-6">
+            <span class="focus-number">06</span>
+            <h3>Cross-agent privilege delegation</h3>
+            <p>Design secure, auditable delegation of privileges between agents, including scope, least privilege, accountability, and realistic end-to-end use cases.</p>
+            <span class="detail-link">View detailed brief ↓</span>
+          </a>
+        </div>
+        <div class="focus-details" aria-label="Detailed focus area briefs">
+          <details class="focus-detail" id="focus-detail-1" name="focus-area">
+            <summary><span class="detail-number">AREA 01</span>Universal agent client</summary>
+            <div class="detail-body">
+              <p>Create a universal client for AI agents using the NLIP protocol and standard. The goal is one client that can communicate with any NLIP-compatible agent, analogous to a web browser communicating with any server that supports HTTP/HTTPS.</p>
+              <ul>
+                <li>Discover, connect to, and exchange multimodal or structured messages with different NLIP agents.</li>
+                <li>Provide effective user interfaces for sessions, agent capabilities, identity, consent, and results.</li>
+                <li>Demonstrate realistic end-to-end use cases across different AI models, frameworks, or agent harnesses.</li>
+                <li>Explore innovative interaction designs beyond today's single-agent chat interface.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="focus-detail" id="focus-detail-2" name="focus-area">
+            <summary><span class="detail-number">AREA 02</span>Agent identity and authentication</summary>
+            <div class="detail-body">
+              <p>Develop interoperable identity and authentication mechanisms for users, agents, and services that communicate through open agent protocols.</p>
+              <ul>
+                <li>Address identity establishment, discovery, credentials, authentication, and trust across domains.</li>
+                <li>Consider the lifecycle of credentials, including issuance, rotation, expiration, revocation, and recovery.</li>
+                <li>Demonstrate user-to-agent and agent-to-agent authentication in realistic multi-party scenarios.</li>
+                <li>Explain privacy, usability, deployment, and accountability tradeoffs.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="focus-detail" id="focus-detail-3" name="focus-area" open>
+            <summary><span class="detail-number">AREA 03</span>Security functions at unified control points</summary>
+            <div class="detail-body detail-layout">
+              <div>
+                <p>Figure 1 anchors the approach in a communication-layer control-point architecture. Structured NLIP messages connect agents with user clients—including people and mobile or web applications—and with other agents. Every incoming or outgoing NLIP message crosses a standardized boundary, making ingress and egress natural enforcement points for input- and output-driven attacks.</p>
+                <p>Like reference monitors in classical access-control systems, these control points support consistent validation, policy enforcement, and monitoring across heterogeneous agent implementations.</p>
+                <h4>Task goal</h4>
+                <p>Build one pluggable security function in the agent security architecture shown in Figure 1. Thoroughly evaluate it against relevant state-of-the-art attacks to demonstrate that the defense works effectively and efficiently.</p>
+                <h4>Choose one enforcement location</h4>
+                <ul>
+                  <li><strong>Ingress:</strong> inspect an incoming message before the agent processes it; block or clean up malicious or unsafe input.</li>
+                  <li><strong>Egress:</strong> inspect an outgoing message before it leaves the agent; block or clean up malicious or unsafe output.</li>
+                  <li><strong>Tool/model boundary:</strong> the agent invokes a Type-3 Security Extension (SE) immediately before or after an LLM or tool call.</li>
+                </ul>
+                <p>Type-1 SEs secure user-client-to-agent interactions, Type-2 SEs secure agent-to-agent interactions, and Type-3 SEs secure an agent's interactions with external tools and AI-model APIs. Together they support prevention, detection, and recovery for system-level and AI-driven vulnerabilities.</p>
+                <h4>Framework-agnostic by design</h4>
+                <p><a href="https://github.com/nlip-project/nlip_server">NLIP's open-source libraries</a>—<strong>nlip_sdk</strong>, <strong>nlip_client</strong>, and <strong>nlip_server</strong>—abstract message structure, transport, and endpoint communication. NLIP governs external communication while an agent may internally use LangChain, AG2, LlamaIndex, CrewAI, or another framework, so the same security function can protect different implementations without modifying their internal logic.</p>
+                <h4>How Type-3 extends protection</h4>
+                <ul>
+                  <li><strong>At NLIP control points:</strong> inspect inputs that may trigger tool or model interactions and filter outputs derived from them before propagation.</li>
+                  <li><strong>Around a call:</strong> invoke a Type-3 SE immediately before or after a tool or model interaction for deeper inspection and enforcement.</li>
+                </ul>
+                <p>A Type-3 SE might validate tool arguments, enforce authorization or usage limits, block unsafe calls, mask sensitive results, or record an auditable decision. This extends reusable controls beyond NLIP message boundaries while retaining NLIP as the common communication-layer enforcement point.</p>
+                <h4>Use only information visible at the boundary</h4>
+                <p>The function cannot see the agent's hidden reasoning. It must make its decision using only:</p>
+                <ul>
+                  <li>the relevant NLIP message or structured tool/model call data;</li>
+                  <li>local state recorded from earlier interactions; and</li>
+                  <li>the policy implemented by the team.</li>
+                </ul>
+                <p class="fit-test"><strong>Fit test:</strong> Can the security decision be made using data visible at one of these enforcement locations, without depending on hidden reasoning or framework-specific internals?</p>
+                <p>An SE may allow, reject, redact, tag, throttle, log, or rewrite a message or call according to explicit policy. Identify the relevant ECMA-434 security objectives, and evaluate effectiveness, false alarms, runtime cost, and limitations against realistic attacks.</p>
+              </div>
+              <figure class="detail-figure">
+                <div class="detail-figure-viewport">
+                  <img src="assets/agent-control-point-architecture.png" alt="NLIP framework architecture with unified control points hosting Type-1, Type-2, and Type-3 pluggable Security Extensions between user clients, agents, external agents, tools, and language models.">
+                </div>
+                <figcaption><strong>Figure 1.</strong> NLIP communication-layer control points host pluggable Security Extensions (SEs): Type 1 for user-client interactions, Type 2 for agent-to-agent interactions, and Type 3 for external tool and model-API interactions.</figcaption>
+              </figure>
+            </div>
+          </details>
+          <details class="focus-detail" id="focus-detail-4" name="focus-area">
+            <summary><span class="detail-number">AREA 04</span>Schemas and structured NLIP messages</summary>
+            <div class="detail-body">
+              <p>Design schemas for structured documents carried inside NLIP messages, conceptually like XML or HTML documents transported by HTTP/HTTPS. Contributions should improve machine-readable interoperability without coupling agents to a single model or framework.</p>
+              <ul>
+                <li><strong>Generic schemas:</strong> reusable structures for common agent capabilities, tasks, results, errors, provenance, or policy metadata.</li>
+                <li><strong>Domain-specific schemas:</strong> structures tailored to areas such as commerce, healthcare, education, transportation, government, or scientific workflows.</li>
+                <li>Consider validation, extensibility, versioning, compatibility, and/or developer usability.</li>
+                <li>Demonstrate messages exchanged and correctly interpreted by independently implemented agents.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="focus-detail" id="focus-detail-5" name="focus-area">
+            <summary><span class="detail-number">AREA 05</span>Representative multi-agent use cases</summary>
+            <div class="detail-body">
+              <p>Build representative multi-agent applications that use NLIP as their communication standard. The project should show why standardized communication improves interoperability, composition, security, or usability.</p>
+              <ul>
+                <li>Choose a realistic scenario with a clear user or organizational need.</li>
+                <li>Connect independently developed agents, ideally using different models, frameworks, or harnesses.</li>
+                <li>Show task coordination, delegation, structured information exchange, failures, and recovery.</li>
+                <li>Evaluate the system end to end and identify what remains difficult to standardize.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="focus-detail" id="focus-detail-6" name="focus-area">
+            <summary><span class="detail-number">AREA 06</span>Cross-agent privilege delegation</summary>
+            <div class="detail-body">
+              <p>Design and implement secure privilege delegation when one agent authorizes another agent to act for a user, organization, or upstream agent.</p>
+              <ul>
+                <li>Represent delegated authority, scope, purpose, duration, constraints, and chains of delegation.</li>
+                <li>Enforce least privilege and support attenuation, expiration, revocation, and policy conflicts.</li>
+                <li>Provide tamper-evident accountability and auditability across agent boundaries.</li>
+                <li>Demonstrate the design through realistic end-to-end use cases and misuse scenarios.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
       </div>
     </section>
 
     <section id="participation">
       <div class="wrap">
         <div class="section-head">
-          <div><p class="eyebrow">Participation</p><h2>How to join</h2></div>
-          <div>
-            <p class="section-copy">Track-specific challenge briefs, eligibility, team formation, deliverable format, evaluation criteria, and submission instructions will be announced here as they are finalized.</p>
-            <div class="actions">
-              <a class="button" href="hackathons.html">← Back to hackathon overview</a>
-              <!-- Replace this placeholder with the AI Agent Track submission portal when available. -->
-              <span class="button" aria-disabled="true">Submission website coming soon</span>
-            </div>
-          </div>
+          <div><p class="eyebrow">For every focus area</p><h2>Shared expectations</h2></div>
+          <p class="section-copy">All six focus areas use one submission format and one judging framework. Teams should deliver a working, standards-grounded contribution with a reproducible evaluation.</p>
+        </div>
+        <div class="expectations-grid">
+          <article class="expectation-card">
+            <h3>Submission requirements</h3>
+            <ul>
+              <li><strong>Report:</strong> up to 5 pages of main content and 7 pages total, using the <a href="https://www.acm.org/publications/proceedings-template" target="_blank" rel="noreferrer">ACM double-column format</a>.</li>
+              <li><strong>Open-source repository:</strong> working implementation, evaluation artifacts, setup and usage instructions, and steps to reproduce reported results.</li>
+              <li><strong>Recommended license:</strong> MIT, Apache 2.0, BSD, or similar.</li>
+              <li><strong>Demo:</strong> an end-to-end demonstration that reviewers can run; provide a scaled-down configuration or recorded run if special resources are required.</li>
+            </ul>
+          </article>
+          <article class="expectation-card">
+            <h3>Judging criteria</h3>
+            <ul>
+              <li><strong>10% — Problem definition:</strong> importance, scope, assumptions, and risks.</li>
+              <li><strong>20% — Standards-grounded use case:</strong> correct and meaningful use of NLIP or related open standards.</li>
+              <li><strong>30% — Design and implementation:</strong> technical quality, effectiveness, usability, and innovation.</li>
+              <li><strong>25% — Evaluation:</strong> realistic testing, appropriate baselines, efficiency, limitations, and evidence.</li>
+              <li><strong>15% — Reproducibility and clarity:</strong> runnable artifacts, clear documentation, demo quality, and report quality.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="actions">
+          <a class="button" href="hackathons.html">← Back to hackathon overview</a>
+          <!-- Replace this placeholder with the AI Agent Track submission portal when available. -->
+          <span class="button" aria-disabled="true">Submission website coming soon</span>
         </div>
         <p class="note"><strong>Recognition and publication:</strong> Hackathon winners will be invited to present their work at the SafeOSE '27 workshop, and their reports will be incorporated into the workshop's official proceedings.</p>
-        <p class="note" style="margin-top:1rem"><strong>Separate program:</strong> Participation in this track is separate from research-paper submission. The November 30 deadline applies to the hackathon; research papers have a December 10 deadline.</p>
       </div>
     </section>
 
@@ -107,5 +257,13 @@
       <p><a href="index.html">Home</a> · <a href="cfp.html">Call for papers</a> · <a href="hackathons.html">Hackathon</a> · <a href="https://sdiotsec.github.io/">SDIoTSec archive</a></p>
     </div>
   </footer>
+  <script>
+    document.querySelectorAll('.focus-card').forEach((card) => {
+      card.addEventListener('click', () => {
+        const detail = document.querySelector(card.hash);
+        if (detail) detail.open = true;
+      });
+    });
+  </script>
 </body>
 </html>
