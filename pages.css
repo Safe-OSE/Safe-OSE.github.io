@@ -164,6 +164,7 @@ h2 { margin-bottom: .8rem; font-family: "Roboto Slab", Georgia, serif; font-size
 .pc-chair { grid-column: span 2; padding: 1.5rem; border: 1px solid var(--line); border-top: 4px solid var(--green); border-radius: var(--radius); background: var(--white); }
 .pc-chair span { color: var(--green); font-size: .75rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 .pc-chair h3 { margin: .55rem 0 .25rem; font-family: "Roboto Slab", Georgia, serif; font-size: 1.35rem; font-weight: 600; }
+.pc-chair h3 a { color: inherit; text-decoration: none; }
 .pc-chair p { margin: 0; color: var(--muted); }
 .pc-chair .title { color: var(--ink); font-weight: 700; }
 .pc-chair .title a { color: inherit; text-decoration: none; }
@@ -172,6 +173,7 @@ h2 { margin-bottom: .8rem; font-family: "Roboto Slab", Georgia, serif; font-size
 .portrait-link { display: block; width: 96px; height: 96px; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px var(--line); }
 .portrait { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .portrait-luyi { object-position: center 28%; }
+.portrait-xiaojing { object-position: center 35%; }
 .pc-placeholder { grid-column: 1 / -1; padding: 1.5rem; border: 1px dashed rgba(19, 42, 44, .35); border-radius: var(--radius); color: var(--muted); background: rgba(255,255,255,.4); text-align: center; }
 
 footer { padding: 3rem 0; color: rgba(255,255,255,.74); background: var(--ink); }
