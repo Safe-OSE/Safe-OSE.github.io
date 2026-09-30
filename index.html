@@ -127,13 +127,16 @@
     .lineage p + p { margin-top: 1rem; }
     .lineage .button { align-self: end; justify-self: start; border-color: rgba(255,255,255,.55); }
 
-    .people { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-    .person { min-height: 185px; padding: 1.35rem; border-top: 4px solid var(--amber); background: var(--white); text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
+    .people { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .person { display: grid; grid-template-columns: 92px 1fr; gap: 1.2rem; min-height: 175px; padding: 1.35rem; align-items: center; border-top: 4px solid var(--amber); background: var(--white); text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
     .person:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
     .person h3 { margin-bottom: .45rem; font-size: 1.1rem; }
     .person p { margin: 0; color: var(--muted); font-size: .9rem; }
     .person .title { color: var(--ink); font-weight: 750; }
     .person .affiliation { margin-top: .45rem; }
+    .committee-headshot { display: block; width: 92px; height: 92px; border-radius: 50%; object-fit: cover; object-position: center; box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px var(--line); }
+    .committee-headshot.luyi { object-position: center 28%; }
+    .committee-headshot.elisa { object-position: center 24%; }
     footer { padding: 3rem 0; color: rgba(255,255,255,.74); background: var(--ink); }
     .footer-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; }
     footer strong { display: block; margin-bottom: .35rem; color: var(--white); font-size: 1.15rem; }
@@ -270,10 +273,22 @@
           <p class="section-copy">SafeOSE connects expertise across systems and AI security, open-source ecosystems, standards, governance, IoT, and software supply chains.</p>
         </div>
         <div class="people">
-          <a class="person" href="https://www.xing-luyi.com/" target="_blank" rel="noreferrer"><h3>Luyi Xing</h3><p class="title">Associate Professor of Computer Science</p><p class="affiliation">University of Illinois Urbana-Champaign</p></a>
-          <a class="person" href="https://ljcamp.github.io/" target="_blank" rel="noreferrer"><h3>Jean Camp</h3><p class="title">Bank of America Distinguished Professor of Security Analysis</p><p class="affiliation">University of North Carolina at Charlotte</p></a>
-          <a class="person" href="https://www.cs.purdue.edu/homes/bertino/" target="_blank" rel="noreferrer"><h3>Elisa Bertino</h3><p class="title">ACM President and Samuel D. Conte Distinguished Professor of Computer Science</p><p class="affiliation">Purdue University</p></a>
-          <a class="person" href="https://research.ibm.com/people/dinesh-verma" target="_blank" rel="noreferrer"><h3>Dinesh Verma</h3><p class="title">IBM Fellow</p><p class="affiliation">IBM Research</p></a>
+          <a class="person" href="https://www.xing-luyi.com/" target="_blank" rel="noreferrer">
+            <img class="committee-headshot luyi" src="assets/luyi-xing.jpg" alt="Headshot of Luyi Xing" width="92" height="92" loading="lazy">
+            <div><h3>Luyi Xing</h3><p class="title">Associate Professor of Computer Science</p><p class="affiliation">University of Illinois Urbana-Champaign</p></div>
+          </a>
+          <a class="person" href="https://ljcamp.github.io/" target="_blank" rel="noreferrer">
+            <img class="committee-headshot" src="assets/jean-camp.jpg" alt="Headshot of Jean Camp" width="92" height="92" loading="lazy">
+            <div><h3>Jean Camp</h3><p class="title">Bank of America Distinguished Professor of Security Analysis</p><p class="affiliation">University of North Carolina at Charlotte</p></div>
+          </a>
+          <a class="person" href="https://www.cs.purdue.edu/homes/bertino/" target="_blank" rel="noreferrer">
+            <img class="committee-headshot elisa" src="assets/elisa-bertino.jpg" alt="Headshot of Elisa Bertino" width="92" height="92" loading="lazy">
+            <div><h3>Elisa Bertino</h3><p class="title">ACM President and Samuel D. Conte Distinguished Professor of Computer Science</p><p class="affiliation">Purdue University</p></div>
+          </a>
+          <a class="person" href="https://research.ibm.com/people/dinesh-verma" target="_blank" rel="noreferrer">
+            <img class="committee-headshot" src="assets/dinesh-verma.webp" alt="Headshot of Dinesh Verma" width="92" height="92" loading="lazy">
+            <div><h3>Dinesh Verma</h3><p class="title">IBM Fellow</p><p class="affiliation">IBM Research</p></div>
+          </a>
         </div>
       </div>
     </section>
