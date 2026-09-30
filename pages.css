@@ -70,7 +70,7 @@ nav { min-height: 72px; display: flex; align-items: center; justify-content: spa
   font-size: clamp(3rem, 6.5vw, 6rem);
   font-weight: 500;
 }
-.page-hero.compact { padding: 3.75rem 0 3.25rem; }
+.page-hero.compact { padding: 2.5rem 0 2rem; }
 .page-hero.compact .eyebrow {
   margin-bottom: 1rem;
   font-size: clamp(.95rem, 1.4vw, 1.15rem);
@@ -78,10 +78,13 @@ nav { min-height: 72px; display: flex; align-items: center; justify-content: spa
 }
 .page-hero.compact h1 {
   max-width: 1040px;
-  margin-bottom: 1rem;
-  font-size: clamp(2.35rem, 3.8vw, 3.65rem);
+  margin-bottom: .75rem;
+  font-size: clamp(2.2rem, 3.5vw, 3.35rem);
 }
-.page-hero.compact .deadline-banner { margin-top: 2rem; }
+.page-hero.compact .deadline-banner { margin-top: 1.25rem; }
+.page-hero.compact .hero-intro { max-width: 1040px; color: var(--muted); font-size: 1.02rem; line-height: 1.65; }
+.page-hero.compact .hero-intro p { margin: 0; }
+.page-hero.compact .hero-intro p + p { margin-top: .65rem; }
 .page-hero .lede { max-width: 780px; margin: 0; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); }
 .deadline-banner {
   display: grid;
