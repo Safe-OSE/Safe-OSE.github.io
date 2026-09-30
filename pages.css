@@ -86,6 +86,7 @@ nav { min-height: 72px; display: flex; align-items: center; justify-content: spa
 .page-hero.compact .hero-intro p { margin: 0; }
 .page-hero.compact .hero-intro p + p { margin-top: .65rem; }
 .page-hero .lede { max-width: 780px; margin: 0; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); }
+.hackathon-theme { max-width: 850px; margin: 1.5rem 0 0; padding: 1rem 1.25rem; border-left: 4px solid var(--amber); border-radius: 0 .9rem .9rem 0; color: var(--ink); background: var(--white); box-shadow: 0 12px 36px rgba(19, 41, 75, .1); font-family: "Roboto Slab", Georgia, serif; font-size: clamp(1.3rem, 2.7vw, 1.9rem); font-weight: 500; line-height: 1.35; }
 .deadline-banner {
   display: grid;
   grid-template-columns: 1fr auto;
