@@ -137,7 +137,7 @@ h2 { margin-bottom: .8rem; font-family: "Roboto Slab", Georgia, serif; font-size
 .detail-body .fit-test { margin-top: 1.25rem; padding: 1rem 1.1rem; border-left: 4px solid var(--green); border-radius: 0 .65rem .65rem 0; color: var(--ink); background: var(--mint); }
 .detail-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 1.5rem; align-items: start; }
 .detail-figure { margin: 0; padding: .65rem; border: 1px solid var(--line); border-radius: .9rem; background: var(--paper); }
-.detail-figure-viewport { aspect-ratio: 1652 / 900; overflow: hidden; background: var(--white); }
+.detail-figure-viewport { aspect-ratio: 1645 / 859; overflow: hidden; background: var(--white); }
 .detail-figure img { display: block; width: 100%; height: auto; }
 .detail-figure figcaption { padding: .85rem .35rem .2rem; color: var(--muted); font-size: .82rem; line-height: 1.45; }
 .detail-figure figcaption strong { color: var(--ink); }
