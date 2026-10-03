@@ -12,19 +12,30 @@
 </head>
 <body>
   <header>
-    <nav class="wrap" aria-label="Primary navigation">
+    <nav class="wrap site-nav" aria-label="Site navigation">
       <a class="brand" href="index.html"><span>Safe</span>OSE '27</a>
-      <div class="nav-links">
-        <a href="index.html#about">About</a>
-        <a href="index.html#dates">Dates</a>
-        <a href="index.html#people">Organizers</a>
-        <a class="button" href="cfp.html">Call for papers</a>
-        <a class="button" href="hackathons.html" aria-current="page">Open-Source AI Security Hackathon</a>
+      <div class="page-nav">
+        <a href="index.html">Workshop</a>
+        <a href="cfp.html"><span class="wide-label">Call for papers</span><span class="short-label">Papers</span></a>
+        <a href="hackathons.html" aria-current="page"><span class="wide-label">AI Security Hackathon</span><span class="short-label">Hackathon</span></a>
+      </div>
+    </nav>
+    <nav class="section-nav" aria-label="On this page">
+      <div class="wrap section-nav-inner">
+        <span class="section-nav-label">On this page</span>
+        <div class="section-links">
+          <a href="#top">Overview</a>
+          <a href="#focus-areas">Focus areas</a>
+          <a href="#prizes">Awards</a>
+          <a href="#participation">Participation</a>
+          <a href="#hackathon-dates">Dates</a>
+          <a href="#hackathon-chairs">Chairs</a>
+        </div>
       </div>
     </nav>
   </header>
 
-  <main>
+  <main id="top">
     <div class="page-hero compact">
       <div class="wrap">
         <p class="eyebrow">SafeOSE '27 hands-on program</p>
@@ -323,6 +334,7 @@
       <p><a href="index.html">Home</a> · <a href="cfp.html">Call for papers</a> · <a href="hackathons.html">Hackathon</a> · <a href="https://sdiotsec.github.io/">SDIoTSec archive</a></p>
     </div>
   </footer>
+  <script src="site-nav.js" defer></script>
   <script>
     document.querySelectorAll('.focus-card').forEach((card) => {
       card.addEventListener('click', () => {
