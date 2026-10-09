@@ -3,8 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SafeOSE '27 — the NDSS Workshop on Security, Privacy, and Trust in Open-Source Ecosystems and Standards.">
-  <title>SafeOSE '27 | NDSS Workshop</title>
+  <meta name="description" content="NDSS SafeOSE '27 — Workshop on Security, Privacy, and Trust in Open-Source Ecosystems and Standards.">
+  <meta property="og:title" content="NDSS SafeOSE '27">
+  <meta property="og:description" content="Workshop on Security, Privacy, and Trust in Open-Source Ecosystems and Standards.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NDSS SafeOSE '27">
+  <meta name="twitter:description" content="Workshop on Security, Privacy, and Trust in Open-Source Ecosystems and Standards.">
+  <title>NDSS SafeOSE '27 | Workshop</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -79,7 +85,8 @@
     }
     .hero-grid { position: relative; display: grid; grid-template-columns: 1.35fr .65fr; gap: 5rem; align-items: end; }
     h1, h2, h3 { margin-top: 0; line-height: 1.08; letter-spacing: -.045em; }
-    h1 { max-width: 900px; margin-bottom: .75rem; color: #000; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(3.4rem, 7vw, 6.4rem); font-weight: 500; }
+    h1 { max-width: none; margin-bottom: .75rem; color: #000; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(2.6rem, 5.2vw, 4.7rem); font-weight: 500; white-space: nowrap; }
+    .safe-accent { color: var(--orange-deep); }
     .formal-title { max-width: 780px; margin: 0 0 1rem; color: #000; font-family: "Roboto Slab", Georgia, serif; font-size: clamp(1.35rem, 2.5vw, 2rem); font-weight: 700; line-height: 1.25; letter-spacing: -.025em; }
     .lede { max-width: 760px; margin: 0; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.35rem); }
     .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.1rem; }
@@ -130,12 +137,16 @@
     .date-row strong { font-size: 1.05rem; }
     .date-row span { color: var(--muted); font-size: .84rem; }
 
-    .lineage { display: grid; grid-template-columns: 1.55fr .45fr; gap: 3rem; padding: 2.4rem; border-radius: calc(var(--radius) + .5rem); color: var(--white); background: var(--ink); box-shadow: var(--shadow); }
+    .lineage { display: grid; grid-template-columns: repeat(2, 1fr); padding: 2.4rem; border-radius: calc(var(--radius) + .5rem); color: var(--white); background: var(--ink); box-shadow: var(--shadow); }
+    .lineage-block { padding-right: 2.4rem; }
+    .lineage-block + .lineage-block { padding-right: 0; padding-left: 2.4rem; border-left: 1px solid rgba(255,255,255,.2); }
     .lineage .eyebrow { color: var(--mint); }
-    .lineage h2 { margin-bottom: 1rem; }
+    .lineage h2 { margin-bottom: 1rem; font-size: clamp(1.8rem, 2.7vw, 2.7rem); }
     .lineage p { margin: 0; color: rgba(255,255,255,.8); }
     .lineage p + p { margin-top: 1rem; }
-    .lineage .button { align-self: end; justify-self: start; border-color: rgba(255,255,255,.55); }
+    .lineage a:not(.button) { color: var(--mint); font-weight: 700; text-decoration: none; transition: color .18s ease; }
+    .lineage a:not(.button):hover, .lineage a:not(.button):focus-visible { color: var(--white); text-decoration: underline; text-decoration-color: rgba(219,231,245,.65); text-decoration-thickness: 1px; text-underline-offset: .2em; }
+    .lineage .button { margin-top: 1.4rem; border-color: rgba(255,255,255,.55); }
 
     .people { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .person { display: grid; grid-template-columns: 92px 1fr; gap: 1.2rem; min-height: 175px; padding: 1.35rem; align-items: center; border-top: 4px solid var(--amber); background: var(--white); text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
@@ -156,6 +167,8 @@
     @media (max-width: 820px) {
       .hero { padding-top: 4rem; }
       .hero-grid, .section-head, .lineage { grid-template-columns: 1fr; gap: 2rem; }
+      .lineage-block { padding-right: 0; }
+      .lineage-block + .lineage-block { padding: 2rem 0 0; border-top: 1px solid rgba(255,255,255,.2); border-left: 0; }
       .cards, .people { grid-template-columns: repeat(2, 1fr); }
       .feature-grid { grid-template-columns: 1fr; }
       .fact-card { max-width: 480px; }
@@ -171,7 +184,7 @@
       .section-nav-inner { gap: .6rem; }
       .section-nav-label { font-size: .6rem; }
       .section-links a { padding-inline: .55rem; font-size: .75rem; }
-      h1 { font-size: 3rem; }
+      h1 { font-size: clamp(1.9rem, 9vw, 2.25rem); }
       .cards, .topics, .people { grid-template-columns: 1fr; }
       .date-row { grid-template-columns: 1fr; gap: .25rem; }
       .footer-row { align-items: flex-start; flex-direction: column; }
@@ -181,7 +194,7 @@
 <body>
   <header>
     <nav class="wrap site-nav" aria-label="Site navigation">
-      <a class="brand" href="index.html"><span>Safe</span>OSE '27</a>
+      <a class="brand" href="index.html">NDSS <span>Safe</span>OSE '27</a>
       <div class="page-nav">
         <a href="index.html" aria-current="page">Workshop</a>
         <a href="cfp.html"><span class="wide-label">Call for papers</span><span class="short-label">Papers</span></a>
@@ -207,8 +220,8 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">A workshop at the Network and Distributed System Security (NDSS) Symposium 2027</p>
-          <h1>SafeOSE '27</h1>
+          <p class="eyebrow">A workshop at the Network and Distributed System Security (NDSS) Symposium 2027, a premier cybersecurity conference</p>
+          <h1>NDSS <span class="safe-accent">Safe</span>OSE '27</h1>
           <p class="formal-title">NDSS Workshop on Security, Privacy, and Trust in Open-Source Ecosystems and Standards</p>
           <p class="lede">Bringing together researchers, maintainers, standards developers, and practitioners to make the shared technologies we all depend on more resilient.</p>
           <div class="actions">
@@ -230,11 +243,11 @@
     <section id="about">
       <div class="wrap">
         <div class="section-head">
-          <div><p class="eyebrow">Why SafeOSE</p><h2>Think beyond the repository.</h2></div>
+          <div><p class="eyebrow">Why NDSS SafeOSE</p><h2>Think beyond the repository.</h2></div>
           <div class="section-copy">
             <p>An open-source ecosystem (OSE) is not a single open-source project, repository, or software dependency. It is the broader socio-technical system organized around one or more shared open-source products, standards, protocols, platforms, or connected technical artifacts. An OSE includes those artifacts together with the organizations and governance structures that guide them; the contributors, maintainers, and developers who create them; the users and downstream adopters who depend on them; the development, maintenance, integration, and deployment infrastructure that supports them; and the applications through which they are used.</p>
-            <p>SafeOSE therefore studies security at the ecosystem level. Software supply-chain risks are an important part of this problem, but the scope is broader: it also encompasses shared standards and protocols, reference implementations, governance and maintenance processes, contributor and user interactions, ecosystem-wide trust relationships, and real-world deployment. Weaknesses in these common foundations can propagate across organizations, products, applications, and users.</p>
-            <p>This challenge is visible in standardized IoT and increasingly urgent in open-source AI-agent ecosystems, where independently developed agents communicate, delegate tasks, and access tools through shared protocols and frameworks. These are two prominent examples, not boundaries on the workshop's scope. SafeOSE encompasses open-source and/or standards-driven ecosystems across AI systems and infrastructure, data systems, software, applications, scientific and engineering processes, and emerging technologies. SafeOSE aims to build a sustained community around their security, privacy, safety, and trustworthiness, bringing together security, systems, and AI researchers; standards developers; open-source maintainers; industry practitioners; and downstream adopters.</p>
+            <p>NDSS SafeOSE therefore studies security at the ecosystem level, with an emphasis on advancing cybersecurity research, developing generalizable security principles and techniques, and translating promising approaches into practical open-source and standards-based mechanisms. Software supply-chain risks are an important part of this problem, but the scope is broader: it also encompasses shared standards and protocols, reference implementations, governance and maintenance processes, contributor and user interactions, ecosystem-wide trust relationships, and real-world deployment. Weaknesses in these common foundations can propagate across organizations, products, applications, and users.</p>
+            <p>This challenge is visible in standardized IoT and increasingly urgent in open-source AI-agent ecosystems, where independently developed agents communicate, delegate tasks, and access tools through shared protocols and frameworks. These are two prominent examples, not boundaries on the workshop's scope. NDSS SafeOSE encompasses open-source and/or standards-driven ecosystems across AI systems and infrastructure, data systems, software, applications, scientific and engineering processes, and emerging technologies. NDSS SafeOSE aims to build a sustained community around their security, privacy, safety, and trustworthiness, bringing together security, systems, and AI researchers; standards developers; open-source maintainers; industry practitioners; and downstream adopters.</p>
           </div>
         </div>
         <div class="cards">
@@ -249,19 +262,19 @@
       <div class="wrap">
         <div class="section-head">
           <div><p class="eyebrow">Participate</p><h2>Two distinct programs</h2></div>
-          <p class="section-copy">SafeOSE offers a broad peer-reviewed research-paper program and a hands-on hackathon focused on security and trust in open-source AI agent ecosystems. Hackathon participation is separate from research-paper submission; each program has its own scope, instructions, and deadline.</p>
+          <p class="section-copy">NDSS SafeOSE offers a broad peer-reviewed research-paper program and a hands-on hackathon focused on security and trust in open-source AI agent ecosystems. Hackathon participation is separate from research-paper submission; each program has its own scope, instructions, and deadline.</p>
         </div>
         <div class="feature-grid">
           <article class="feature-card">
             <span class="tag">RESEARCH PAPERS</span>
             <h3>Call for Papers</h3>
-            <p>Submit regular or short papers to the broad SafeOSE research program. Papers receive double-blind peer review and accepted work will appear in official workshop proceedings.</p>
+            <p>Submit regular or short papers to the broad NDSS SafeOSE research program. Papers receive double-blind peer review and accepted work will appear in official workshop proceedings.</p>
             <a class="button primary" href="cfp.html">View research CFP →</a>
           </article>
           <article class="feature-card agent">
             <span class="tag">HANDS-ON PROGRAM</span>
             <h3>Open-Source AI Security Hackathon</h3>
-            <p>Build and evaluate practical contributions for effective and trustworthy open-source AI agent ecosystems. Winners will be invited to present at the SafeOSE '27 workshop.</p>
+            <p>Build and evaluate practical contributions for effective and trustworthy open-source AI agent ecosystems. Winners will be invited to present at the NDSS SafeOSE '27 workshop.</p>
             <a class="button" href="hackathons.html">Explore the hackathon →</a>
           </article>
         </div>
@@ -289,7 +302,7 @@
         <div class="date-group">
           <h3>Workshop</h3>
           <div class="dates">
-            <div class="date-row"><time datetime="2027-03-22">March 22, 2027</time><strong>SafeOSE '27</strong><span>Seoul, Republic of Korea · Co-located with NDSS '27</span></div>
+            <div class="date-row"><time datetime="2027-03-22">March 22, 2027</time><strong>NDSS SafeOSE '27</strong><span>Seoul, Republic of Korea · Co-located with NDSS '27</span></div>
           </div>
         </div>
       </div>
@@ -299,7 +312,7 @@
       <div class="wrap">
         <div class="section-head">
           <div><p class="eyebrow">Community</p><h2>Steering Committee</h2></div>
-          <p class="section-copy">SafeOSE connects expertise across systems and AI security, open-source ecosystems, standards, governance, IoT, and software supply chains.</p>
+          <p class="section-copy">NDSS SafeOSE connects expertise across systems and AI security, open-source ecosystems, standards, governance, IoT, and software supply chains.</p>
         </div>
         <div class="people">
           <a class="person" href="https://www.xing-luyi.com/" target="_blank" rel="noreferrer">
@@ -332,19 +345,24 @@
 
     <section id="lineage">
       <div class="wrap lineage">
-        <div>
+        <article class="lineage-block" aria-labelledby="nsf-connection-title">
+          <p class="eyebrow">NSF connection</p>
+          <h2 id="nsf-connection-title">Connection to NSF Safe-OSE</h2>
+          <p>NDSS SafeOSE '27 is an independent academic workshop whose development has been informed in part by the U.S. National Science Foundation's <a href="https://www.nsf.gov/funding/opportunities/safe-ose-safety-security-privacy-open-source-ecosystems/506343/nsf24-608" target="_blank" rel="noreferrer">Safety, Security, and Privacy of Open-Source Ecosystems (NSF Safe-OSE) program</a>. Activities contributing to the workshop are partially supported through an <a href="https://www.nsf.gov/awardsearch/show-award?AWD_ID=2625398" target="_blank" rel="noreferrer">NSF Safe-OSE award</a>. We gratefully acknowledge NSF's leadership in advancing the security, privacy, safety, and resilience of open-source ecosystems.</p>
+        </article>
+        <article class="lineage-block">
           <p class="eyebrow">Our lineage</p>
-          <h2>From SDIoTSec to SafeOSE.</h2>
-          <p>SafeOSE grows directly from SDIoTSec, the NDSS Workshop on Security and Privacy in Standardized IoT, held annually since 2024. SDIoTSec was founded on the insight that vulnerabilities in shared standards and implementations can propagate across entire ecosystems. SafeOSE expands this perspective to broader open-source infrastructure, software, AI systems, and agent ecosystems.</p>
-        </div>
-        <a class="button" href="https://sdiotsec.github.io/" target="_blank" rel="noreferrer">Visit the prior SDIoTSec workshop ↗</a>
+          <h2>From SDIoTSec to NDSS SafeOSE.</h2>
+          <p>NDSS SafeOSE grows directly from SDIoTSec, the NDSS Workshop on Security and Privacy in Standardized IoT, held annually since 2024. SDIoTSec was founded on the insight that vulnerabilities in shared standards and implementations can propagate across entire ecosystems. NDSS SafeOSE expands this perspective to broader open-source infrastructure, software, AI systems, and agent ecosystems.</p>
+          <a class="button" href="https://sdiotsec.github.io/" target="_blank" rel="noreferrer">Visit the prior SDIoTSec workshop ↗</a>
+        </article>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap footer-row">
-      <div><strong>SafeOSE '27</strong><p>Security, Privacy, and Trust in Open-Source Ecosystems and Standards</p></div>
+      <div><strong>NDSS SafeOSE '27</strong><p>Security, Privacy, and Trust in Open-Source Ecosystems and Standards</p></div>
       <p><a href="cfp.html">Call for papers</a> · <a href="hackathons.html">Hackathon</a> · <a href="https://sdiotsec.github.io/">SDIoTSec archive</a></p>
     </div>
   </footer>
