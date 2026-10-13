@@ -148,10 +148,12 @@
     .lineage a:not(.button):hover, .lineage a:not(.button):focus-visible { color: var(--white); text-decoration: underline; text-decoration-color: rgba(219,231,245,.65); text-decoration-thickness: 1px; text-underline-offset: .2em; }
     .lineage .button { margin-top: 1.4rem; border-color: rgba(255,255,255,.55); }
 
+    .organizer-subsection + .organizer-subsection { margin-top: 2.75rem; }
+    .organizer-subsection-title { margin: 0 0 1.1rem; font-family: "Roboto Slab", Georgia, serif; font-size: 1.45rem; font-weight: 650; }
     .people { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .person { display: grid; grid-template-columns: 92px 1fr; gap: 1.2rem; min-height: 175px; padding: 1.35rem; align-items: center; border-top: 4px solid var(--amber); background: var(--white); text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
     .person:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-    .person h3 { margin-bottom: .45rem; font-size: 1.1rem; }
+    .person h3, .person h4 { margin: 0 0 .45rem; font-family: "Roboto Slab", Georgia, serif; font-size: 1.1rem; font-weight: 650; }
     .person p { margin: 0; color: var(--muted); font-size: .9rem; }
     .person .title { color: var(--ink); font-weight: 750; }
     .person .affiliation { margin-top: .45rem; }
@@ -311,34 +313,72 @@
     <section class="alt" id="people">
       <div class="wrap">
         <div class="section-head">
-          <div><p class="eyebrow">Community</p><h2>Steering Committee</h2></div>
-          <p class="section-copy">NDSS SafeOSE connects expertise across systems and AI security, open-source ecosystems, standards, governance, IoT, and software supply chains.</p>
+          <div><p class="eyebrow">Workshop leadership</p><h2>Organizers</h2></div>
+          <p class="section-copy">NDSS SafeOSE brings together leaders across systems and AI security, open-source ecosystems, standards, governance, IoT, and software supply chains.</p>
         </div>
-        <div class="people">
-          <a class="person" href="https://www.xing-luyi.com/" target="_blank" rel="noreferrer">
-            <img class="committee-headshot luyi" src="assets/luyi-xing.jpg" alt="Headshot of Luyi Xing" width="92" height="92" loading="lazy">
-            <div><h3>Luyi Xing</h3><p class="title">Associate Professor of Computer Science</p><p class="affiliation">University of Illinois Urbana-Champaign</p></div>
-          </a>
-          <a class="person" href="https://ljcamp.github.io/" target="_blank" rel="noreferrer">
-            <img class="committee-headshot" src="assets/jean-camp.jpg" alt="Headshot of Jean Camp" width="92" height="92" loading="lazy">
-            <div><h3>Jean Camp</h3><p class="title">Bank of America Distinguished Professor of Security Analysis</p><p class="affiliation">University of North Carolina at Charlotte</p></div>
-          </a>
-          <a class="person" href="https://www.cs.purdue.edu/homes/bertino/" target="_blank" rel="noreferrer">
-            <img class="committee-headshot elisa" src="assets/elisa-bertino.jpg" alt="Headshot of Elisa Bertino" width="92" height="92" loading="lazy">
-            <div><h3>Elisa Bertino</h3><p class="title">ACM President and Samuel D. Conte Distinguished Professor of Computer Science</p><p class="affiliation">Purdue University</p></div>
-          </a>
-          <a class="person" href="https://research.ibm.com/people/dinesh-verma" target="_blank" rel="noreferrer">
-            <img class="committee-headshot" src="assets/dinesh-verma.webp" alt="Headshot of Dinesh Verma" width="92" height="92" loading="lazy">
-            <div><h3>Dinesh Verma</h3><p class="title">IBM Fellow</p><p class="affiliation">IBM Research</p></div>
-          </a>
-          <a class="person" href="https://www.linkedin.com/in/sinharanjan/" target="_blank" rel="noreferrer">
-            <img class="committee-headshot" src="assets/ranjan-sinha.jpeg" alt="Headshot of Ranjan Sinha" width="92" height="92" loading="lazy">
-            <div><h3>Ranjan Sinha</h3><p class="title">IBM Fellow, IBM Software</p><p class="affiliation">IBM</p></div>
-          </a>
-          <a class="person" href="https://www.linkedin.com/in/ctnguyen/" target="_blank" rel="noreferrer">
-            <img class="committee-headshot" src="assets/christopher-nguyen.jpeg" alt="Headshot of Christopher Cuong T. Nguyen" width="92" height="92" loading="lazy">
-            <div><h3>Christopher Cuong T. Nguyen</h3><p class="title">CEO, Aitomatic</p><p class="affiliation">Board Member, AI Alliance</p></div>
-          </a>
+        <div class="organizer-subsection">
+          <h3 class="organizer-subsection-title">Steering Committee</h3>
+          <div class="people">
+            <a class="person" href="https://www.xing-luyi.com/" target="_blank" rel="noreferrer">
+              <img class="committee-headshot luyi" src="assets/luyi-xing.jpg" alt="Headshot of Luyi Xing" width="92" height="92" loading="lazy">
+              <div><h4>Luyi Xing</h4><p class="title">Associate Professor of Computer Science</p><p class="affiliation">University of Illinois Urbana-Champaign</p></div>
+            </a>
+            <a class="person" href="https://ljcamp.github.io/" target="_blank" rel="noreferrer">
+              <img class="committee-headshot" src="assets/jean-camp.jpg" alt="Headshot of Jean Camp" width="92" height="92" loading="lazy">
+              <div><h4>Jean Camp</h4><p class="title">Bank of America Distinguished Professor of Security Analysis</p><p class="affiliation">University of North Carolina at Charlotte</p></div>
+            </a>
+            <a class="person" href="https://www.cs.purdue.edu/homes/bertino/" target="_blank" rel="noreferrer">
+              <img class="committee-headshot elisa" src="assets/elisa-bertino.jpg" alt="Headshot of Elisa Bertino" width="92" height="92" loading="lazy">
+              <div><h4>Elisa Bertino</h4><p class="title">ACM President and Samuel D. Conte Distinguished Professor of Computer Science</p><p class="affiliation">Purdue University</p></div>
+            </a>
+            <a class="person" href="https://research.ibm.com/people/dinesh-verma" target="_blank" rel="noreferrer">
+              <img class="committee-headshot" src="assets/dinesh-verma.webp" alt="Headshot of Dinesh Verma" width="92" height="92" loading="lazy">
+              <div><h4>Dinesh Verma</h4><p class="title">IBM Fellow</p><p class="affiliation">IBM Research</p></div>
+            </a>
+            <a class="person" href="https://www.linkedin.com/in/sinharanjan/" target="_blank" rel="noreferrer">
+              <img class="committee-headshot" src="assets/ranjan-sinha.jpeg" alt="Headshot of Ranjan Sinha" width="92" height="92" loading="lazy">
+              <div><h4>Ranjan Sinha</h4><p class="title">IBM Fellow, IBM Software</p><p class="affiliation">IBM</p></div>
+            </a>
+            <a class="person" href="https://www.linkedin.com/in/ctnguyen/" target="_blank" rel="noreferrer">
+              <img class="committee-headshot" src="assets/christopher-nguyen.jpeg" alt="Headshot of Christopher Cuong T. Nguyen" width="92" height="92" loading="lazy">
+              <div><h4>Christopher Cuong T. Nguyen</h4><p class="title">CEO, Aitomatic</p><p class="affiliation">Board Member, AI Alliance</p></div>
+            </a>
+          </div>
+        </div>
+        <div class="organizer-subsection">
+          <h3 class="organizer-subsection-title">Research Track PC Chairs</h3>
+          <div class="people">
+            <a class="person" href="https://gangw.cs.illinois.edu/" target="_blank" rel="noreferrer">
+              <img class="committee-headshot" src="assets/gang-wang.jpg" alt="Headshot of Gang Wang" width="92" height="92" loading="lazy">
+              <div><h4>Gang Wang</h4><p class="title">Program Committee Co-Chair</p><p class="affiliation">University of Illinois Urbana-Champaign</p></div>
+            </a>
+            <a class="person" href="https://www.xiaojingliao.com/" target="_blank" rel="noreferrer">
+              <img class="committee-headshot" src="assets/xiaojing-liao.jpg" alt="Headshot of Xiaojing Liao" width="92" height="92" loading="lazy">
+              <div><h4>Xiaojing Liao</h4><p class="title">Program Committee Co-Chair</p><p class="affiliation">University of Illinois Urbana-Champaign</p></div>
+            </a>
+          </div>
+        </div>
+        <div class="organizer-subsection">
+          <h3 class="organizer-subsection-title">Hackathon Chairs</h3>
+          <div class="people">
+            <a class="person" href="https://www.xing-luyi.com/" target="_blank" rel="noreferrer">
+              <img class="committee-headshot luyi" src="assets/luyi-xing.jpg" alt="Headshot of Luyi Xing" width="92" height="92" loading="lazy">
+              <div><h4>Luyi Xing</h4><p class="title">Hackathon Chair</p><p class="affiliation">University of Illinois Urbana-Champaign</p></div>
+            </a>
+            <a class="person" href="https://research.ibm.com/people/dinesh-verma" target="_blank" rel="noreferrer">
+              <img class="committee-headshot" src="assets/dinesh-verma.webp" alt="Headshot of Dinesh Verma" width="92" height="92" loading="lazy">
+              <div><h4>Dinesh Verma</h4><p class="title">Hackathon Chair · IBM Fellow</p><p class="affiliation">IBM</p></div>
+            </a>
+          </div>
+        </div>
+        <div class="organizer-subsection">
+          <h3 class="organizer-subsection-title">Local Chair</h3>
+          <div class="people">
+            <a class="person" href="https://lifeasageek.github.io/" target="_blank" rel="noreferrer">
+              <img class="committee-headshot" src="assets/byoungyoung-lee.png" alt="Headshot of Byoungyoung Lee" width="92" height="92" loading="lazy">
+              <div><h4>Byoungyoung Lee</h4><p class="title">Professor, Electrical &amp; Computer Engineering</p><p class="affiliation">Seoul National University</p></div>
+            </a>
+          </div>
         </div>
       </div>
     </section>
