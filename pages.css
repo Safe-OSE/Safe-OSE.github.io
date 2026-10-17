@@ -204,6 +204,8 @@ h2 { margin-bottom: .8rem; font-family: "Roboto Slab", Georgia, serif; font-size
 .judge-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .75rem; }
 .judge-card { min-height: 148px; padding: 1.25rem; border: 1px solid var(--line); border-top: 3px solid var(--green); border-radius: var(--radius); background: var(--white); }
 .judge-card h3 { margin: 0 0 .75rem; font-family: "Roboto Slab", Georgia, serif; font-size: 1.12rem; font-weight: 600; line-height: 1.25; }
+.judge-card h3 a { color: inherit; text-decoration: none; }
+.judge-card h3 a:hover { color: var(--orange-deep); }
 .judge-card p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.45; }
 .judge-card .title { color: var(--ink); font-weight: 700; }
 .judge-card .affiliation { margin-top: .4rem; }
