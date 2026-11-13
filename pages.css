@@ -119,6 +119,7 @@ main [id] { scroll-margin-top: 132px; }
 .deadline-banner span { color: var(--mint); font-size: .76rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
 .deadline-banner strong { font-family: "Roboto Slab", Georgia, serif; font-size: clamp(1.35rem, 3vw, 2rem); font-weight: 500; }
 .deadline-banner .prize-teaser { display: block; margin-top: .55rem; color: var(--white); font-size: .9rem; letter-spacing: .01em; text-transform: none; }
+.deadline-actions { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: flex-end; }
 
 section { padding: 5rem 0; }
 section.alt { background: var(--cream); }
@@ -241,6 +242,7 @@ footer a { color: var(--mint); }
   .section-links a { padding-inline: .55rem; font-size: .75rem; }
   .page-hero { padding-top: 4rem; }
   .discord-callout, .deadline-banner, .date-row { grid-template-columns: 1fr; gap: .75rem; }
+  .deadline-actions { justify-content: flex-start; }
   .discord-callout .button { justify-self: start; }
   .topics { grid-template-columns: 1fr; }
   .pc-grid { grid-template-columns: 1fr; }
